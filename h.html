@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Send Flow</title>
+  <style>
+    .none { display: none; }
+    .next-btn {
+      background: #ccc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: not-allowed;
+    }
+    .next-btn:not(.disabled) {
+      background: #0070ba;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="send-1">
+  <h2>Send to</h2>
+  <input type="text" id="userid" placeholder="Enter name">
+  <br><br>
+  <button class="next-btn disabled" id="next-1">Next</button>
+</div>
+
+<div id="send-2" class="none">
+  <h2>Enter Amount</h2>
+  <input type="text" placeholder="Amount">
+  <button>Send</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nextBtn1 = document.getElementById("next-1");
+  const userInput = document.getElementById("userid");
+
+  userInput.addEventListener("input", function () {
+    if (userInput.value.trim() !== "") {
+      nextBtn1.classList.remove("disabled");
+    } else {
+      nextBtn1.classList.add("disabled");
+    }
+  });
+
+  nextBtn1.addEventListener("click", function () {
+    if (nextBtn1.classList.contains("disabled")) return;
+
+    document.getElementById("send-1").classList.add("none");
+    document.getElementById("send-2").classList.remove("none");
+  });
+});
+</script>
+
+</body>
+</html>

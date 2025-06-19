@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="uni.css">
+    <link rel="stylesheet" href="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/css/style.css">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header adjustments */
+        .header-div {
+            padding: 10px;
+        }
+
+        .menu-list {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu-list li {
+            list-style: none;
+        }
+
+        .menu-list a {
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .sm-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-list {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .gap-20 {
+                gap: 10px;
+            }
+
+            .footer-flexd-1 {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .send-section h2 {
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+            .send-input-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .next-btn {
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+        }
+
+        .loading-circle {
+   border: 4px solid #0d00ff;
+    border-top: 4px solid #fff0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.confirmation-message {
+    margin-top: -50px;
+  }
+  #send-4 {
+    margin-top: -50px;
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .send-more-btn {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff; /* Small border */
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .send-more-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+  /* Send 1 section adjustments */
+  .send-section h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .send-input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .send-input-wrapper input {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .next-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .send-wrapper {
+    padding: 15px 10px;
+  }
+
+  #send-2 .send-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #send-2 .amount-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #send-2 .amount-field {
+    width: 100%;
+    font-size: 28px;
+  }
+
+  #send-2 .currency-select {
+    width: 100%;
+  }
+
+  #send-2 .note-box {
+    font-size: 14px;
+    height: 60px;
+  }
+
+  .pop-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #send-4 h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  #send-4 .next-btn {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #send-4 .cancel {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .suggestion-box li {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+       .amount-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.avatar-name-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.circle-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #8e44ad;
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.balance-info {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none; /* ✅ removes underline */
+}
+
+
+.balance-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.amount-input-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.currency-symbol {
+    margin-right: 10px;
+    font-size: 32px;
+    color: #333;
+}
+
+.amount-field {
+    border: none;
+    outline: none; /* ✅ Removes the blue focus box */
+    font-size: 36px;
+    text-align: right;
+    width: 140px;
+    font-weight: bold;
+    padding: 5px 0;
+    background-color: transparent;
+    box-shadow: none; /* ✅ Prevents shadows on click */
+}
+/* Add this CSS inside a <style> block */
+.amount-field {
+    transition: all 0.1s ease-in-out;
+    letter-spacing: 1px;
+}
+
+
+
+.currency-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #888;
+    font-weight: 600;
+}
+
+.amount-field:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+.note-line {
+    font-size: 14px;
+    color: #555;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+    margin-top: -10px;
+}
+
+
+.button-row {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cancel-link {
+    font-size: 14px;
+    color: #0070ba;
+    text-decoration: none;
+}
+.cancel-link:hover {
+    text-decoration: underline;
+}
+ .neext-btn {
+    width: 350px; /* Or any desired width */
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+.neext-btn {
+    background-color: #ccc; /* gray when disabled */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+.neext-btn:not(.disabled) {
+    background-color: #0070ba; /* Blue when active */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .neext-btn {
+    width: 100%;
+  }
+}
+.contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-item {
+  text-align: center;
+  width: 60px;
+}
+
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 auto 5px auto;
+}
+
+.contact-name {
+  font-size: 12px;
+  color: #333;
+  word-break: break-word;
+}
+
+</style>
+</style>
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-div">
+            <div class="container">
+                <div class="flex header-flex space-between align-center">
+                    <div class="flex gap-20 align-center">
+                        <div class="logo-img"><a href="/">
+                            <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/pp-fv.svg" alt="Logo">
+                        </a></div>
+                        <ul class="menu-list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#" class="active">Send</a></li>
+                            <li><a href="#">Wallet</a></li>
+                            <li><a href="#">Activity</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex align-center gap-20">
+                        <div class="dp-icon">
+                            <a href="#">
+                                <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/bell.svg" alt="Notification" class="icon">
+                            </a>
+                        </div>
+                        <div class="dp-icon">
+                            <a href="#">
+                                <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/settings.svg" alt="Settings" class="icon">
+                            </a>
+                        </div>
+                        <div><a href="#" class="light-blue font-14">LOG OUT</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="box-section pt-25 pb-25">
+        <div class="sm-container">
+            <a href="#" title="Send" class="white-btn">Send</a>
+        </div>
+    </section>
+
+    <section class="send-section pt-50 pb-100">
+        <div class="sm-container">
+            <div id="send-1">
+                <h2>Send payment to</h2>
+                <div class="mt-30 send-input-wrapper flex">
+                    <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/search.svg" alt="Search" class="icon">
+                   
+                    <input type="text" id="userid" placeholder="Enter name, email, or username" autocomplete="off">
+                    <ul class="suggestion-box" id="suggestion-box"></ul>
+                  
+                </div>
+                <div>
+                    <button class="mt-30 next-btn disabled" id="next-1">Next</button>
+                    
+                </div>
+                <br>
+                <div id="contact-row" class="contact-row mt-30">
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const contactRow = document.getElementById("contact-row");
+
+  function renderContacts() {
+    const contacts = JSON.parse(localStorage.getItem("contacts") || "[]");
+    contactRow.innerHTML = "";
+
+   const colors = ['#3498db', '#e74c3c', '#2ecc71', '#9b59b6', '#f39c12'];
+
+contacts.slice(0, 5).forEach((name, index) => {
+  const initials = name.trim().substring(0, 2).toUpperCase();
+  const bgColor = colors[index % colors.length]; // cycle through colors
+
+  contactRow.innerHTML += `
+    <div class="contact-item">
+      <div class="contact-avatar" style="background-color: ${bgColor};">${initials}</div>
+      <div class="contact-name">${name}</div>
+    </div>
+  `;
+});
+
+  }
+
+  // Store new name on completed send
+  const fundBtn = document.getElementById("fund-btn");
+  fundBtn.addEventListener("click", () => {
+    const nameInput = document.getElementById("userid").value.trim();
+    if (!nameInput) return;
+
+    // Wait until transition to #send-4
+    setTimeout(() => {
+      let contacts = JSON.parse(localStorage.getItem("contacts") || "[]");
+
+      // Add only if not duplicate
+      if (!contacts.includes(nameInput)) {
+        contacts.unshift(nameInput); // add to top
+      }
+
+      // Save up to 5 contacts
+      contacts = contacts.slice(0, 5);
+      localStorage.setItem("contacts", JSON.stringify(contacts));
+      renderContacts();
+    }, 2100); // delay must be longer than the setTimeout in send flow
+  });
+
+  renderContacts(); // Render on page load
+});
+</script>
+
+</div>
+            </div>
+
+            <div id="send-2" class="none">
+  <div class="receipt-box">
+    <div class="amount-wrapper">
+      <!-- Avatar and Name -->
+      <div class="avatar-name-row">
+  <div class="circle-avatar">SA</div>
+  <div class="user-name">Sample Account</div>
+</div>
+
+      <!-- Amount Input -->
+      <div class="amount-input-box">
+        <span class="currency-symbol">€</span>
+     <input type="text" id="fund-value" class="amount-field" placeholder="0.00" autocomplete="off" inputmode="decimal">
+        <div class="currency-label">EUR</div>
+      </div>
+
+      <!-- Note -->
+      <div class="note-line">What’s this for?</div>
+
+      <!-- Buttons -->
+      <div class="button-row">
+        <button class="neext-btn disabled" id="fund-btn">Next</button>
+        <a href="3fh.html" class="cancel-link">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div id="processing" class="none txt-center">
+                <div class="loading-circle"></div>
+            </div>
+            
+
+            <div id="send-4" class="none">
+                <div class="pop-content">
+                    <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/tick.svg" alt="Success" class="icon">
+                    <h3>You've just sent € <span id="send-val"></span> to <span id="usename"></span></h3>
+                    <div><button class="mt-50 next-btn" id="back-btn">Send More</button></div>
+                    <br>
+                    <div><a href="3fh.html" button class="mt-20 cancel">Home</button></div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="box-section">
+        <div class="pt-40 pb-40">
+            <div class="sm-container">
+                <div class="flex footer-flexd-1 gap-40">
+                    <div class="footer-logo">
+                        <a href="#">
+                            <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/PayPal.svg.png" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="footer-list flex gap-20 align-center">
+                        <li><a href="#" title="Help">Help</a></li>
+                        <li><a href="#" title="Contact Us">Contact Us</a></li>
+                        <li><a href="#" title="Security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="pt-40 pb-40">
+            <div class="sm-container">
+                <div class="flex footer-flexd-1 gap-30">
+                    <p class="font-14">&copy;1999-2023 PayPal, Inc. All rights reserved.</p>
+                    <ul class="footer-list sm-fl flex gap-20 align-center">
+                        <li><a href="#" title="Privacy">Privacy</a></li>
+                        <li><a href="#" title="Cookies">Cookies</a></li>
+                        <li><a href="#" title="Legal">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="mt-30">
+                    <p class="font-14">PayPal Pte. Ltd. is licensed by the Monetary Authority of Singapore as a Major Payment Institution under the Payment Services Act 2019.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/js/jquery.magnific-popup.js"></script>
+    <script src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/js/script.js"></script>
+    <script>
+        // Redirect to index.html when the "Send More Money" button is clicked
+        document.getElementById('back-btn').addEventListener('click', function () {
+            window.location.href = 'index.html'; // Adjust the path if index.html is in another folder
+        });
+    </script>
+ <style>
+     .suggestion-box {
+            position: absolute;
+            top: 50px;
+            width: 68%;
+            border: 1px solid #ddd;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .suggestion-box li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+        .suggestion-box li:last-child {
+            border-bottom: none;
+        }
+        .suggestion-box li:hover {
+    background: #f0f0f0;
+}
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            display: block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .user-profile {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: none;
+        }
+        
+</style>
+
+<script>
+    
+    // Show the loading animation for 4 seconds
+function showLoading() {
+    const processingDiv = document.getElementById('processing');
+    processingDiv.classList.remove('none'); // Show the loading animation
+
+}
+
+// Example usage: Call showLoading when the user clicks the "Continue" button
+document.getElementById('fund-btn').addEventListener('click', function () {
+    showLoading();
+});
+
+const recentInputs = ["rt", "d", "dtfg"];
+recentInputs.forEach(input => {
+    // Logic to display input in suggestions
+});
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let balance = localStorage.getItem("balance") || 405584912.86; // Default balance
+        balance = parseFloat(balance); 
+
+        document.getElementById('fund-btn').addEventListener('click', function () {
+            let amount = parseFloat(document.getElementById("fund-value").value);
+
+            if (isNaN(amount) || amount <= 0 || amount > balance) {
+                alert("Invalid amount. Please enter a valid amount within your balance.");
+                return;
+            }
+
+            setTimeout(() => {
+                // Deduct balance
+                balance -= amount;
+                localStorage.setItem("balance", balance.toFixed(2));
+
+                // Update success message
+                document.getElementById("send-val").innerText = amount.toFixed(2);
+            }, 2000); 
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        const key = event.key;
+
+        // Check if the pressed key is a letter (a-z) or a number (0-9)
+        if (/^[a-zA-Z0-9]$/.test(key)) {
+            // Find the corresponding button or perform an action
+            let button = document.querySelector(`[data-key="${key}"]`);
+            if (button) {
+                button.click(); // Simulate a button click
+            }
+        }
+    });
+
+    // Example: Assigning data-key attributes to buttons (add this manually in your HTML)
+    document.addEventListener("DOMContentLoaded", function () {
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach(button => {
+            let key = button.innerText.trim();
+            if (key.length === 1) {
+                button.setAttribute("data-key", key.toLowerCase()); // Set lowercase letter or number
+            }
+        });
+    });
+    document.getElementById('fund-btn').addEventListener('click', function () {
+    showLoading();
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+});
+
+function showLoading() {
+    const processingDiv = document.getElementById('processing');
+    processingDiv.classList.remove('none'); // Show the loading animation
+}
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputField = document.getElementById('inputField');
+      const nextButton = document.getElementById('nextButton');
+      const continueButton = document.getElementById('continueButton');
+  
+      function toggleButtons() {
+        if (inputField.value.trim() !== '') {
+          nextButton.classList.remove('disabled');
+          continueButton.classList.remove('disabled');
+        } else {
+          nextButton.classList.add('disabled');
+          continueButton.classList.add('disabled');
+        }
+      }
+  
+      inputField.addEventListener('input', toggleButtons);
+    });
+  </script>
+ <script>
+  let typingTimer;
+const typingDelay = 500; 
+const inputField = document.getElementById('userid');
+const suggestionBox = document.getElementById('suggestion-box');
+
+inputField.addEventListener('input', function() {
+    clearTimeout(typingTimer);
+    const input = this.value.trim();
+    
+    if (input.length > 0) {
+        suggestionBox.innerHTML = `<li><div class="loading-spinner" style="display:block;"></div><span>Loading...</span></li>`;
+        suggestionBox.style.display = 'block';
+
+        typingTimer = setTimeout(() => {
+    const suggestions = [
+    { name: `${input}`, initials: input.charAt(0).toUpperCase(), color: "#8e44ad" },
+    { name: `${input}374`, initials: input.charAt(0).toUpperCase(), color: "#e74c3c" },
+    { name: `${input}@gmail.com`, initials: input.charAt(0).toUpperCase(), color: "#3498db" }
+];
+
+
+    suggestionBox.innerHTML = suggestions.map(user => `
+        <li>
+            <div style="
+                background:${user.color}; 
+                color:white; 
+                width:30px; 
+                height:30px; 
+                border-radius:50%; 
+                display:flex; 
+                align-items:center; 
+                justify-content:center; 
+                font-weight:bold; 
+                margin-right:10px;
+                flex-shrink: 0;
+            ">
+                ${user.initials}
+            </div>
+            <span>${user.name}</span>
+        </li>
+    `).join('');
+
+    suggestionBox.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', function () {
+    const selectedText = this.querySelector('span').innerText.trim();
+    document.getElementById('userid').value = selectedText;
+    suggestionBox.style.display = 'none';
+
+    // Update user name in send-2
+    const userNameEl = document.querySelector('.user-name');
+    if (userNameEl) userNameEl.innerText = selectedText;
+
+    // Update avatar with first 2 letters
+    const avatarEl = document.querySelector('.circle-avatar');
+    if (avatarEl) avatarEl.innerText = selectedText.substring(0, 2).toUpperCase();
+});
+
+
+    });
+}, typingDelay);
+
+    } else {
+        suggestionBox.style.display = 'none';
+    }
+});
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href="3fh.html"]').forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            
+            const newWindow = window.open("3fh.html", "_self");
+
+            if (newWindow.document.documentElement.requestFullscreen) {
+                newWindow.document.documentElement.requestFullscreen();
+            } else if (newWindow.document.documentElement.webkitRequestFullscreen) {
+                newWindow.document.documentElement.webkitRequestFullscreen();
+            }
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fundInput = document.getElementById("fund-value");
+    let cleared = false;
+
+    fundInput.addEventListener("focus", function () {
+        if (!cleared && fundInput.value === "00.00") {
+            fundInput.value = "";
+            cleared = true;
+        }
+    });
+
+    // Optional: prevent invalid input
+    fundInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fundInput = document.getElementById("fund-value");
+    const fundBtn = document.getElementById("fund-btn");
+    let balance = parseFloat(localStorage.getItem("balance")) || 405584912.86;
+
+    // Format & validate input
+    function validateAndFormatAmount() {
+        // Remove all except digits and .
+        let raw = fundInput.value.replace(/[^\d.]/g, '');
+
+        // Avoid multiple dots
+        const parts = raw.split('.');
+        if (parts.length > 2) raw = parts[0] + '.' + parts[1];
+
+        let amount = parseFloat(raw);
+
+  
+
+        // Enable or disable button
+        if (!isNaN(amount) && amount > 0 && amount <= balance) {
+            fundBtn.classList.remove("disabled");
+        } else {
+            fundBtn.classList.add("disabled");
+        }
+    }
+
+    fundInput.addEventListener("input", validateAndFormatAmount);
+
+    fundBtn.addEventListener("click", function () {
+        if (fundBtn.classList.contains("disabled")) return;
+
+        const rawAmount = parseFloat(fundInput.value.replace(/,/g, ''));
+        if (isNaN(rawAmount)) return;
+
+        // Deduct and update balance
+        balance -= rawAmount;
+        localStorage.setItem("balance", balance.toFixed(2));
+        document.getElementById("send-val").innerText = rawAmount.toFixed(2);
+        document.getElementById("usename").innerText = document.getElementById("userid").value.trim();
+
+        // Switch screens
+        document.getElementById("send-2").classList.add("none");
+        document.getElementById("processing").classList.remove("none");
+
+        setTimeout(() => {
+            document.getElementById("processing").classList.add("none");
+            document.getElementById("send-4").classList.remove("none");
+        }, 3000);
+    });
+});
+</script>
+
+</body>
+</html>
